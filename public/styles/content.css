@@ -1,0 +1,46 @@
+
+h1 {
+  text-align: center;
+  color: white;
+  font-family: 'Ubuntu', sans-serif;
+  width: 500px;
+  margin: auto;
+
+
+}
+
+input:checked + label {
+  text-decoration: line-through;
+  font-style: italic;
+}
+
+.item {
+  color: white;
+  text-align: center;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.nav-item {
+  font-family: 'Ubuntu', sans-serif;
+  color:white;
+}
+
+.nav-link {
+  color:white;
+  font-family: 'Ubuntu', sans-serif;
+}
+html{
+  background: lightsteelblue;
+}
+
+.box{
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: auto;
+  width: 500px;
+  border-style: solid;
+  border-color: white;
+  background-color:#A9A9A9;
+  border-radius: 25px;
+}

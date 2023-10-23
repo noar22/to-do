@@ -1,0 +1,63 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="ind.js" defer></script>
+  <link rel="stylesheet" href="/styles/content.css">
+  <title><%=title%></title>
+
+</head>
+<header>
+  <nav class="navbar navbar-expand-custom navbar-mainbg ">
+
+    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+
+        <li class="nav-item">
+          <a class="nav-link" href="/"><i class="far fa-calendar-alt"></i>Today</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/work"><i class="far fa-clone"></i>Work</a>
+        </li>
+
+
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<body>
+  <main>  <div class="box" id="heading">
+    <h1>
+      <%=title%>
+    </h1>
+
+<%if (locals.itemsWork2){  %>
+  <% for (let i=0; i<itemsWork2.length; i++){ %>
+      <form class="" action="/deleteWork" method="post">
+        <div class="item">
+          <input type="checkbox" name="checkbox" value="<%= itemsWork2[i]._id%>" onChange="this.form.submit()"  >
+          <label for="<%=itemsWork2[i] %>" ><%=itemsWork2[i].name%> </label><br>
+          </div>
+          <input type="hidden" name="listName" value="<%=title%>" </input>
+          </form>
+              <% } }%>
+
+
+
+
+  <form class="item" action="/submitWork" method="post">
+    <input type="text" name="newItem2" placeholder="New Item" autocomplete="off" />
+      <button type="submit" name="list"  value= "<%=title%>" >+</button>
+        </form>
+  </div>
+
+  </main>
+<footer>Copyright © 2023
+</footer>
+<script src="ind.js" charset="utf-8"></script>
+</body>
+
+</html>

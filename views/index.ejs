@@ -1,0 +1,107 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="ind.js" defer></script>
+  <link rel="stylesheet" href="/styles/content.css">
+  <title>Todoey</title>
+
+</head>
+<header>
+  <nav class="navbar navbar-expand-custom navbar-mainbg ">
+
+    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+
+        <li class="nav-item">
+          <a class="nav-link" href="/"><i class="far fa-calendar-alt"></i>Today</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/work"><i class="far fa-clone"></i>Work</a>
+        </li>
+
+
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<body>
+  <main>
+    <h1>
+
+      <% var date= new Date(); %>
+      <% var day=date.getDay(); %>
+      <% if (day==1 ) { %>
+        monday,
+      <%}else if (day==2 ) { %>
+        Tuesday,
+    <%  }else if (day==3 ) {%>
+        wendsday,
+      <%}    else if (day==4) { %>
+        Thursday,
+      <% }else if (day==5) { %>
+        friday,
+    <%  }  else if (day==6) { %>
+      saturday,
+    <%  }else if (day==0) { %>
+        sunday,
+        <%} %>
+        <%var month=date.getMonth(); %>
+        <% if (month==0 ){%>
+          January
+         <% } else if (month==1) { %>
+           February
+         <% } else if (month==2) { %>
+           March
+         <% } else if (month==3) { %>
+           April
+           <% } else if (month==4) { %>
+             May
+           <% } else if (month==5) { %>
+              june
+          <% } else if (month==6) { %>
+                 july
+          <% } else if (month==7) { %>
+                August
+          <% } else if (month==8) { %>
+                September
+          <% } else if (month==9) { %>
+                October
+          <% } else if (month==10) { %>
+                Novemver
+          <% } else if (month==11) { %>
+                December
+          <% } %>
+
+      <%=date.getDate(); %>
+    </h1>
+<div class="box">
+<%if (locals.items2){  %>
+  <% for (let i=0; i<items2.length; i++){ %>
+      <form  action="/delete" method="post" >
+        <div class="item">
+          <input type="checkbox" name="checkbox" value="<%= items2[i]._id%>" onChange="this.form.submit()" >
+          <label for="<%=items2[i] %>" ><%=items2[i].name%> </label><br>
+          </div>
+          </form>
+              <% } }%>
+
+
+
+
+  <form class="item" action="/submit" method="post">
+    <input type="text" name="newItem" placeholder="New Item" autocomplete="off" />
+      <button type="submit" name="list" value=Monday, September 4 >+</button>
+        </form>
+  </div>
+
+  </main>
+<footer>Copyright © 2023
+</footer>
+<script src="ind.js" charset="utf-8"></script>
+</body>
+
+</html>
