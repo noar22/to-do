@@ -10,7 +10,7 @@ var items=[];
 var itemsWork=[];
 var t=0;
 var i=0;
-mongoose.connect("mongodb+srv://noa2:test123@cluster0.eoyaotq.mongodb.net/todoDB");
+mongoose.connect('mongodb://127.0.0.1:27017/todo');
 const todoSchema=new mongoose.Schema( {
   name: String
 } ) ;
